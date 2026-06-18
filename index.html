@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NEXUS - IDENTITY VERIFICATION</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <canvas id="space-bg"></canvas>
+
+    <div class="login-container" id="login-container">
+        <main class="login-panel glass-panel" id="main-panel">
+            
+            <div class="hud-corner top-left"></div>
+            <div class="hud-corner top-right"></div>
+            <div class="hud-corner bottom-left"></div>
+            <div class="hud-corner bottom-right"></div>
+
+            <div class="login-header">
+                <svg class="icon-security" viewBox="0 0 24 24">
+                    <polygon points="12,2 22,6.5 22,13 12,22 2,13 2,6.5" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <polyline points="9,11 11,13 15,9" fill="none" stroke="currentColor" stroke-width="2"/>
+                </svg>
+                <h1>NEXUS <span>SECURITY</span></h1>
+                <p class="subtitle">DIRETRIZ DE SEGURANÇA: TESTE DE REFLEXO QUÂNTICO</p>
+            </div>
+
+            <div id="step-credentials">
+                <form onsubmit="goToMinigame(event)">
+                    <div class="input-group">
+                        <label for="terminal-id">ID DO TERMINAL</label>
+                        <input type="text" id="terminal-id" required placeholder="NX-2150-COM" autocomplete="off">
+                    </div>
+
+                    <div class="input-group">
+                        <label for="clearance-key">CHAVE DE CRIPTOGRAFIA</label>
+                        <input type="password" id="clearance-key" required placeholder="••••••••••••" autocomplete="off">
+                    </div>
+
+                    <button type="submit" class="login-btn">INICIAR CONEXÃO</button>
+                </form>
+            </div>
+
+            <div id="step-minigame" class="hidden">
+                <div class="minigame-instructions">
+                    SINCRO_NIZAR FREQUÊNCIA: CLIQUE QUANDO O SINAL ESTIVER NO CENTRO VERDE!
+                </div>
+                
+                <div class="wave-track">
+                    <div class="target-zone"></div>
+                    <div class="wave-indicator" id="wave-indicator"></div>
+                </div>
+
+                <button type="button" class="login-btn btn-trigger" id="btn-sync" onclick="checkSync()">
+                    SINCRONIZAR AGORA
+                </button>
+            </div>
+
+            <div class="auth-status-box" id="status-box">
+                <span id="status-text">AGUARDANDO INPUT DE DIRETRIZ</span>
+            </div>
+
+            <div class="login-footer">
+                <span>ANTI-BOT PROTOCOL v4.2</span>
+                <span>SEC-LEVEL 05</span>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
